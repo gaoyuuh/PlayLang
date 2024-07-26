@@ -1,0 +1,9 @@
+use_frameworks!
+install! 'cocoapods', :warn_for_unused_master_specs_repo => false
+
+platform :ios, '13.0'
+
+target 'GLang_Example' do
+  pod 'GLang', :path => '../'
+
+end

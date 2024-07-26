@@ -1,0 +1,6 @@
+framework module GLang {
+  umbrella header "GLang-umbrella.h"
+
+  export *
+  module * { export * }
+}

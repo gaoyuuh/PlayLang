@@ -1,0 +1,16 @@
+PODS:
+  - GLang (0.1.0)
+
+DEPENDENCIES:
+  - GLang (from `../`)
+
+EXTERNAL SOURCES:
+  GLang:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  GLang: 5e7cdfe9998d88d6255e4101c7d7f82e80c1cd23
+
+PODFILE CHECKSUM: e9911717ed4b8c1279f3c4227da58fcbd6709075
+
+COCOAPODS: 1.15.2
