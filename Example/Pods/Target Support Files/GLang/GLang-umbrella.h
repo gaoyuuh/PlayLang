@@ -10,10 +10,12 @@
 #endif
 #endif
 
-#import "GParser.h"
+#import "GNode.h"
+#import "GCharStream.h"
 #import "GPosition.h"
 #import "GToken.h"
 #import "GTokenizer.h"
+#import "GParser.h"
 #import "GVM.h"
 
 FOUNDATION_EXPORT double GLangVersionNumber;

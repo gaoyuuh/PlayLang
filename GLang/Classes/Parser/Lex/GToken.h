@@ -177,4 +177,6 @@ typedef NS_ENUM(int, GTokenKind) {
 + (instancetype)tokenKind:(GTokenKind)kind value:(NSString *)value;
 + (instancetype)tokenKind:(GTokenKind)kind value:(NSString *)value pos:(GPosition *)pos;
 
+- (BOOL)isTypeAnnotation;
+
 @end

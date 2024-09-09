@@ -15,6 +15,7 @@
 
 @property (nonatomic, strong) GCharStream * charStream;
 @property (nonatomic, strong) NSMutableArray<GToken *> * aryPeekToken;
+@property (nonatomic, strong) GPosition * lastPos;
 @property (nonatomic, strong) NSDictionary * dicKeyword;
 
 @end
@@ -58,7 +59,20 @@
 }
 
 - (GToken *)peek2 {
-    return nil;
+    GToken *token = nil;
+    if (self.aryPeekToken.count > 1) {
+        token = self.aryPeekToken[1];
+    }
+    while (token == nil) {
+        GToken *token1 = [self getAToken];
+        if (token1) {
+            [self.aryPeekToken addObject:token1];
+        }
+        if (self.aryPeekToken.count > 1) {
+            token = self.aryPeekToken[1];
+        }
+    }
+    return token;
 }
 
 - (GToken *)next {
@@ -69,7 +83,16 @@
     if (!token) {
         token = [self getAToken];
     }
+    self.lastPos = token.position;
     return token;
+}
+
+- (GPosition *)getNextPos {
+    return [self peek].position;
+}
+
+- (GPosition *)getLastPos {
+    return self.lastPos;
 }
 
 - (GToken *)getAToken {
