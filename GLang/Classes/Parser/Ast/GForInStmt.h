@@ -1,15 +1,15 @@
 //
-//  GIfExpr.h
+//  GForInExpr.h
 //  GLang
 //
 //  Created by gaoyu on 2024/7/31.
 //
 
-#import "GExpr.h"
+#import "GStatement.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface GIfExpr : GExpr
+@interface GForInStmt : GStatement
 
 @end
 

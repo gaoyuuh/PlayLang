@@ -13,6 +13,8 @@
 
 + (NSArray<GToken *> *)lexWithCode:(NSString *)code;
 
++ (instancetype)tokenizerWithCode:(NSString *)code;
+
 /// 预读当前的Token，但不移动当前位置
 - (GToken *)peek;
 

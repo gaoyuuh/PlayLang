@@ -5,11 +5,11 @@
 //  Created by gaoyu on 2024/7/31.
 //
 
-#import "GExpr.h"
+#import "GStatement.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface GReturnExpr : GExpr
+@interface GReturnStmt : GStatement
 
 @end
 

@@ -8,8 +8,7 @@
 #import "GTokenizer.h"
 #import "GToken.h"
 #import "GCharStream.h"
-
-#define _S(str, ...) [NSString stringWithFormat:str, ##__VA_ARGS__]
+#import "GMacroDefines.h"
 
 @interface GTokenizer ()
 

@@ -5,11 +5,10 @@
 //  Created by gaoyu on 2024/7/31.
 //
 
-#import "GNode.h"
-#import "GDecl.h"
+#import "GStatement.h"
 
 @interface GProgram : GNode
 
-@property (nonatomic, strong) NSArray<GDecl *> * decls;
+@property (nonatomic, strong) NSArray<GStatement *> * stmts;
 
 @end

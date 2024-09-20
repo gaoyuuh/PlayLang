@@ -8,6 +8,7 @@
 
 #import "GViewController.h"
 #import "GTokenizer.h"
+#import "GParser.h"
 
 @interface GViewController ()
 
@@ -34,6 +35,11 @@
     for (GToken *token in tokens) {
         NSLog(@"%@", token);
     }
+    
+    GParser *parser = [[GParser alloc] init];
+    GTokenizer *tokenizer = [GTokenizer tokenizerWithCode:code];
+    GProgram *program = [parser parseProgram:tokenizer];
+    NSLog(@"----");
 }
 
 @end

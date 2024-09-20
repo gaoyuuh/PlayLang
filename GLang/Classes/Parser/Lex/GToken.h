@@ -10,7 +10,7 @@
 
 typedef NS_ENUM(int, GTokenKind) {
     GTokenKindIdentifier = 1,
-//    GTokenKindKeyword,
+    GTokenKindKeyword,
     GTokenKindIntegerLiteral,
     GTokenKindFloatLiteral,
     GTokenKindBooleanLiteral,
