@@ -6,16 +6,16 @@
 //
 
 #import "GDecl.h"
-#import "GTypeNode.h"
+#import "GType.h"
 #import "GExpr.h"
 #import "GVarSymbol.h"
 
 @interface GVarDecl : GDecl
 
 /// 变量类型
-@property (nonatomic, strong) GTypeNode * declType;
+@property (nonatomic, strong) GType * declType;
 /// 推测类型
-@property (nonatomic, strong) GTypeNode * inferredType;
+@property (nonatomic, strong) GType * inferredType;
 /// 变量初始化的表达式
 @property (nonatomic, strong) GExpr * expr;
 /// 符号表

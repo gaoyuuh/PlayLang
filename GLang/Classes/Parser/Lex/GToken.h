@@ -117,8 +117,8 @@ typedef NS_ENUM(int, GTokenKind) {
     GTokenKindArray,
     /// Dict
     GTokenKindDict,
-    /// Id
-    GTokenKindId,
+    /// Any
+    GTokenKindAny,
     /// var
     GTokenKindVar,
     /// let
@@ -178,5 +178,7 @@ typedef NS_ENUM(int, GTokenKind) {
 + (instancetype)tokenKind:(GTokenKind)kind value:(NSString *)value pos:(GPosition *)pos;
 
 - (BOOL)isTypeAnnotation;
+
+- (BOOL)isOperation;
 
 @end

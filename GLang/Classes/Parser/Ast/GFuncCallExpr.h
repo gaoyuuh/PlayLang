@@ -9,7 +9,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface GCallExpr : GExpr
+@interface GFuncCallExpr : GExpr
+
+@property (nonatomic, strong) NSString * name;
+@property (nonatomic, strong) NSArray<GExpr *> * arguments;
 
 @end
 

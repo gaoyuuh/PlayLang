@@ -613,7 +613,7 @@
             @"String": @(GTokenKindString),
             @"Array": @(GTokenKindArray),
             @"Dict": @(GTokenKindDict),
-            @"Id": @(GTokenKindId),
+            @"Any": @(GTokenKindAny),
             @"var": @(GTokenKindVar),
             @"let": @(GTokenKindLet),
             @"if": @(GTokenKindIf),

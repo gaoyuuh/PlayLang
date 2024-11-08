@@ -5,8 +5,8 @@
 //  Created by gaoyu on 2024/9/19.
 //
 
-#import "GVarStmt.h"
+#import "GVarExpr.h"
 
-@implementation GVarStmt
+@implementation GVarExpr
 
 @end

@@ -7,6 +7,14 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NS_ENUM(int, GSymbolKind) {
+    GSymbolKindVariable = 1,
+    GSymbolKindFunction,
+    GSymbolKindClass,
+};
+
 @interface GSymbol : NSObject
+
+@property (nonatomic, strong) NSString * name;
 
 @end

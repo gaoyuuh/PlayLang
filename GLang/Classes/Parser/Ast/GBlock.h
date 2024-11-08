@@ -11,6 +11,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface GBlock : GStatement
 
+@property (nonatomic, strong) NSArray<GStatement *> * stmts;
+
 @end
 
 NS_ASSUME_NONNULL_END

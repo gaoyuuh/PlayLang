@@ -5,8 +5,8 @@
 //  Created by gaoyu on 2024/7/31.
 //
 
-#import "GCallExpr.h"
+#import "GFuncCallExpr.h"
 
-@implementation GCallExpr
+@implementation GFuncCallExpr
 
 @end
