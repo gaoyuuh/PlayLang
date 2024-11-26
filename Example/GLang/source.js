@@ -12,17 +12,12 @@
 
 var a: Int = 5;
 var b = 10;
-var c: Float = 2.0;
-//printf(a)
+println(a + b / 2);
 
 func test() {
-    
+    return 2;
 }
 
-func test1(a: Int) : Int64 {
-    
-}
-
-call();
-call("123", 1);
+var result = test();
+println(result);
 

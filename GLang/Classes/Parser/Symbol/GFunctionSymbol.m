@@ -9,4 +9,19 @@
 
 @implementation GFunctionSymbol
 
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        self.opStackSize = 10;
+    }
+    return self;
+}
+
+- (NSUInteger)getNumParams {
+    if ([self.theType isKindOfClass:GFunctionType.class]) {
+        return ((GFunctionType *)self.theType).paramTypes.count;
+    }
+    return 0;
+}
+
 @end

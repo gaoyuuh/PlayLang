@@ -6,7 +6,12 @@
 //
 
 #import "GFuncCallExpr.h"
+#import "GAstVisitor.h"
 
 @implementation GFuncCallExpr
+
+- (id)accept:(GAstVisitor *)visitor {
+    return [visitor visitFuncCall:self];
+}
 
 @end

@@ -13,6 +13,10 @@
     return NO;
 }
 
+- (BOOL)hasVoid {
+    return NO;
+}
+
 + (GType *)getUpperBound:(GType *)type1 type2:(GType *)type2 {
     if ([type1.name isEqualToString:GSysTypes.Any.name] ||
         [type2.name isEqualToString:GSysTypes.Any.name]) {
@@ -45,6 +49,18 @@
 
 
 @implementation GSimpleType
+
+- (BOOL)hasVoid {
+    if ([self.name isEqualToString:GSysTypes.Void.name]) {
+        return YES;
+    }
+    for (GType *type in self.upperTypes) {
+        if ([type hasVoid]) {
+            return YES;
+        }
+    }
+    return NO;
+}
 
 - (BOOL)LE:(GType *)type2 {
     if ([type2.name isEqualToString:GSysTypes.Any.name]) {
@@ -89,6 +105,10 @@
 
 @implementation GFunctionType
 
+- (BOOL)hasVoid {
+    return [self.returnType hasVoid];
+}
+
 - (BOOL)LE:(GType *)type2 {
     if ([type2.name isEqualToString:GSysTypes.Any.name]) {
         return YES;
@@ -110,6 +130,15 @@
 
 
 @implementation GUnionType
+
+- (BOOL)hasVoid {
+    for (GType *t in self.types) {
+        if ([t hasVoid]) {
+            return YES;
+        }
+    }
+    return NO;
+}
 
 - (BOOL)LE:(GType *)type2 {
     if ([type2.name isEqualToString:GSysTypes.Any.name]) {
@@ -179,13 +208,21 @@
     return type;
 }
 
++ (GSimpleType *)Void {
+    GSimpleType *type = [[GSimpleType alloc] init];
+    type.name = @"Void";
+    type.upperTypes = @[GSysTypes.Any];
+    return type;
+}
+
 + (BOOL)isSysType:(GType *)t {
     return ([t.name isEqualToString:GSysTypes.Any.name] ||
             [t.name isEqualToString:GSysTypes.Int.name] ||
             [t.name isEqualToString:GSysTypes.Int64.name] ||
             [t.name isEqualToString:GSysTypes.Float.name] ||
             [t.name isEqualToString:GSysTypes.Boolean.name] ||
-            [t.name isEqualToString:GSysTypes.String.name]);
+            [t.name isEqualToString:GSysTypes.String.name] ||
+            [t.name isEqualToString:GSysTypes.Void.name]);
 }
 
 @end

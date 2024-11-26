@@ -6,7 +6,12 @@
 //
 
 #import "GFuncDecl.h"
+#import "GAstVisitor.h"
 
 @implementation GFuncDecl
+
+- (id)accept:(GAstVisitor *)visitor {
+    return [visitor visitFuncDecl:self];
+}
 
 @end

@@ -6,7 +6,12 @@
 //
 
 #import "GBlock.h"
+#import "GAstVisitor.h"
 
 @implementation GBlock
+
+- (id)accept:(GAstVisitor *)visitor {
+    return [visitor visitBlock:self];
+}
 
 @end

@@ -6,6 +6,7 @@
 //
 
 #import "GExpr.h"
+@class GFunctionSymbol;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -13,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) NSString * name;
 @property (nonatomic, strong) NSArray<GExpr *> * arguments;
+@property (nonatomic, strong) GFunctionSymbol * sym;
 
 @end
 

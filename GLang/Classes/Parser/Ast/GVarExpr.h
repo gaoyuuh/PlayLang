@@ -11,5 +11,6 @@
 @interface GVarExpr : GExpr
 
 @property (nonatomic, strong) NSString * name;
+@property (nonatomic, strong) GVarSymbol * sym;
 
 @end

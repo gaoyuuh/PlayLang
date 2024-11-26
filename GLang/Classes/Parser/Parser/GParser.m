@@ -64,7 +64,7 @@
             return [self parseVariableStmt];
         } break;
         case GTokenKindReturn: {
-            
+            return [self parseReturnStmt];
         } break;
         case GTokenKindIf: {
             
@@ -532,6 +532,34 @@
     callExpr.name = name;
     callExpr.arguments = params;
     return callExpr;
+}
+
+/// Return语句
+- (GReturnStmt *)parseReturnStmt {
+    GPosition *beginPos = [self.tokenizer getNextPos];
+    GExpr *expr = nil;
+    // 跳过return
+    [self.tokenizer next];
+    
+    // 解析后面的表达式
+    GToken *token = [self.tokenizer peek];
+    if (token.kind != GTokenKindSemiColon) { // ;
+        expr = [self parseExpression];
+    }
+    
+    // 跳过;
+    token = [self.tokenizer peek];
+    if (token.kind == GTokenKindSemiColon) { // ;
+        [self.tokenizer next];
+    } else {
+        [self addError:@"Expecting ';' after return statement." pos:[self.tokenizer getLastPos]];
+    }
+    
+    GReturnStmt *stmt = [[GReturnStmt alloc] init];
+    stmt.beginPos = beginPos;
+    stmt.endPos = [self.tokenizer getLastPos];
+    stmt.expr = expr;
+    return stmt;
 }
 
 /// 获取运算符优先级

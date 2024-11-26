@@ -9,4 +9,7 @@
 
 @interface GVarSymbol : GSymbol
 
++ (instancetype)symbolWithName:(NSString *)name 
+                       theType:(GType *)theType;
+
 @end

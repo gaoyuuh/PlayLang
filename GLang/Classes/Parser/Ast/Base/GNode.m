@@ -9,4 +9,8 @@
 
 @implementation GNode
 
+- (id)accept:(GAstVisitor *)visitor {
+    return nil;
+}
+
 @end

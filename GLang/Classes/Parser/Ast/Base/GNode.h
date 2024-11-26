@@ -7,11 +7,14 @@
 
 #import <Foundation/Foundation.h>
 #import "GPosition.h"
+@class GAstVisitor;
 
 @interface GNode : NSObject
 
 @property (nonatomic, strong) GPosition * beginPos;
 @property (nonatomic, strong) GPosition * endPos;
 @property (nonatomic, assign) BOOL isErrorNode;
+
+- (id)accept:(GAstVisitor *)visitor;
 
 @end

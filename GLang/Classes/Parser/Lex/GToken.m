@@ -80,6 +80,10 @@
     return operation;
 }
 
++ (BOOL)isAssignOp:(GTokenKind)op {
+    return op == GTokenKindAssign;
+}
+
 - (NSString *)description {
     return [NSString stringWithFormat:@"GToken @%@\t%d\t'%@'", self.position, self.kind, self.value];
 }

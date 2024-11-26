@@ -6,7 +6,12 @@
 //
 
 #import "GVarExpr.h"
+#import "GAstVisitor.h"
 
 @implementation GVarExpr
+
+- (id)accept:(GAstVisitor *)visitor {
+    return [visitor visitVarExpr:self];
+}
 
 @end

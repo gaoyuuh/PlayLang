@@ -9,6 +9,7 @@
 #import "GScope.h"
 #import "GBlock.h"
 #import "GFuncSignature.h"
+@class GFunctionSymbol;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -17,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) GFuncSignature * signature;
 @property (nonatomic, strong) GBlock * body;
 @property (nonatomic, strong) GScope * scope;
+@property (nonatomic, strong) GFunctionSymbol * sym;
 
 @end
 

@@ -9,6 +9,7 @@
 #import "GViewController.h"
 #import "GTokenizer.h"
 #import "GParser.h"
+@import GLang;
 
 @interface GViewController ()
 
@@ -39,6 +40,16 @@
     GParser *parser = [[GParser alloc] init];
     GTokenizer *tokenizer = [GTokenizer tokenizerWithCode:code];
     GProgram *program = [parser parseProgram:tokenizer];
+    
+    GAstDumpVisitor *dumper = [[GAstDumpVisitor alloc] init];
+    [dumper visit:program];
+    
+    GSemanticAnalyer *analyer = [[GSemanticAnalyer alloc] init];
+    [analyer analyse:program];
+    
+    GIntepretor *intepretor = [[GIntepretor alloc] init];
+    [intepretor visitProg:program];
+    
     NSLog(@"----");
 }
 

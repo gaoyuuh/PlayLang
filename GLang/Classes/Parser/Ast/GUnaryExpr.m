@@ -6,7 +6,12 @@
 //
 
 #import "GUnaryExpr.h"
+#import "GAstVisitor.h"
 
 @implementation GUnaryExpr
+
+- (id)accept:(GAstVisitor *)visitor {
+    return [visitor visitUnaryExpr:self];
+}
 
 @end

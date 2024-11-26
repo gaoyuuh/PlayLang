@@ -6,7 +6,12 @@
 //
 
 #import "GReturnStmt.h"
+#import "GAstVisitor.h"
 
 @implementation GReturnStmt
+
+- (id)accept:(GAstVisitor *)visitor {
+    return [visitor visitReturnStmt:self];
+}
 
 @end

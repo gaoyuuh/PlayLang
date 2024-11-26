@@ -6,7 +6,12 @@
 //
 
 #import "GBinaryExpr.h"
+#import "GAstVisitor.h"
 
 @implementation GBinaryExpr
+
+- (id)accept:(GAstVisitor *)visitor {
+    return [visitor visitBinaryExpr:self];
+}
 
 @end

@@ -6,10 +6,13 @@
 //
 
 #import "GStatement.h"
+@class GExpr;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface GReturnStmt : GStatement
+
+@property (nonatomic, strong) GExpr * expr;
 
 @end
 

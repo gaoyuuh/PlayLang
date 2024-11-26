@@ -6,6 +6,7 @@
 //
 
 #import "GLiteral.h"
+#import "GAstVisitor.h"
 
 @implementation GLiteral
 
@@ -13,16 +14,32 @@
 
 @implementation GIntegerLiteral
 
+- (id)accept:(GAstVisitor *)visitor {
+    return [visitor visitIntegerLiteral:self];
+}
+
 @end
 
 @implementation GDecimalLiteral
+
+- (id)accept:(GAstVisitor *)visitor {
+    return [visitor visitDecimalLiteral:self];
+}
 
 @end
 
 @implementation GStringLiteral
 
+- (id)accept:(GAstVisitor *)visitor {
+    return [visitor visitStringLiteral:self];
+}
+
 @end
 
 @implementation GBoolLiteral
+
+- (id)accept:(GAstVisitor *)visitor {
+    return [visitor visitBoolLiteral:self];
+}
 
 @end

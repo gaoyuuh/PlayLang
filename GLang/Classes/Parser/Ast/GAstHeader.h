@@ -10,6 +10,7 @@
 
 #import "GAssignExpr.h"
 #import "GBinaryExpr.h"
+#import "GUnaryExpr.h"
 #import "GBlock.h"
 #import "GFuncCallExpr.h"
 #import "GExprStatement.h"
@@ -22,5 +23,7 @@
 #import "GProgram.h"
 #import "GVarExpr.h"
 #import "GScope.h"
+#import "GLiteral.h"
+#import "GReturnStmt.h"
 
 #endif /* GAstHeader_h */

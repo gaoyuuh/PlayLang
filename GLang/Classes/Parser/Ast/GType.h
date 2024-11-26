@@ -14,6 +14,8 @@
 /// 当前类型是否小于等于type2
 - (BOOL)LE:(GType *)type2;
 
+- (BOOL)hasVoid;
+
 /// type1和type2的上界
 + (GType *)getUpperBound:(GType *)type1 type2:(GType *)type2;
 
@@ -51,6 +53,7 @@
 + (GSimpleType *)Float;
 + (GSimpleType *)Boolean;
 + (GSimpleType *)String;
++ (GSimpleType *)Void;
 
 + (BOOL)isSysType:(GType *)t;
 

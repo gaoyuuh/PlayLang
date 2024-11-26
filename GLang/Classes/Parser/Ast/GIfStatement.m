@@ -6,7 +6,12 @@
 //
 
 #import "GIfStatement.h"
+#import "GAstVisitor.h"
 
 @implementation GIfStatement
+
+- (id)accept:(GAstVisitor *)visitor {
+    return [visitor visitIfStmt:self];
+}
 
 @end

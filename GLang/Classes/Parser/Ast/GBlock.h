@@ -6,12 +6,15 @@
 //
 
 #import "GStatement.h"
+@class GScope;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface GBlock : GStatement
 
 @property (nonatomic, strong) NSArray<GStatement *> * stmts;
+
+@property (nonatomic, strong) GScope * scope;
 
 @end
 

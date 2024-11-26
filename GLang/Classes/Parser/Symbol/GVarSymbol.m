@@ -9,4 +9,13 @@
 
 @implementation GVarSymbol
 
++ (instancetype)symbolWithName:(NSString *)name 
+                       theType:(GType *)theType {
+    GVarSymbol *symbol = [[GVarSymbol alloc] init];
+    symbol.name = name;
+    symbol.kind = GSymbolKindVariable;
+    symbol.theType = theType;
+    return symbol;
+}
+
 @end

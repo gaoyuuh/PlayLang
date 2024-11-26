@@ -6,7 +6,12 @@
 //
 
 #import "GExprStatement.h"
+#import "GAstVisitor.h"
 
 @implementation GExprStatement
+
+- (id)accept:(GAstVisitor *)visitor {
+    return [visitor visitExprStmt:self];
+}
 
 @end

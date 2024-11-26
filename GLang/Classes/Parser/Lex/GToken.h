@@ -181,4 +181,6 @@ typedef NS_ENUM(int, GTokenKind) {
 
 - (BOOL)isOperation;
 
++ (BOOL)isAssignOp:(GTokenKind)op;
+
 @end

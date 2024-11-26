@@ -6,7 +6,12 @@
 //
 
 #import "GProgram.h"
+#import "GAstVisitor.h"
 
 @implementation GProgram
+
+- (id)accept:(GAstVisitor *)visitor {
+    return [visitor visitProg:self];
+}
 
 @end
